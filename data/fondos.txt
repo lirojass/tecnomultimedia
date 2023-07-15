@@ -1,0 +1,8 @@
+pmenufondo.jpg
+guion.jpg
+gatocazafondo.png
+iniciofondo.png
+boobookeysfondo.png
+FinalMalo.png
+FinalBueno.png
+FinalVerdadero.png
