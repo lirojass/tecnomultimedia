@@ -5,7 +5,7 @@ iniciofondo.png
 boobookeysfondo.png
 cazaFallos.png
 intro.png
-charla.png
+Charla.png
 Llamadofondo.png
 FinalMalo.png
 FinalBueno.png
