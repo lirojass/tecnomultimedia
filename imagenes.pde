@@ -1,6 +1,6 @@
 String[] nombredefondos;
 PImage[] fondo;
-PImage[] [] images = new PImage[20][numFrames];
+PImage[] [] images = new PImage[30][numFrames];
 
 void imagenes() {
   animacion(0, "gatomenu", ".png");
@@ -17,6 +17,21 @@ void imagenes() {
   animacion(16, "cazaExito", ".png");
   animacion(17, "cazaExitos", ".png");
   animacion(18, "cazaFallo", ".png");
+  animacion(19, "intro", ".png");
+  animacion(20, "Charla", ".png");
+  animacion(21, "bota", ".png");
+  animacion(22, "sombrero", ".png");
+  animacion(23, "setup", ".png");
+  animacion(24, "Llamadodueño", ".png");
+   for (int i=0; i<2; i++) {
+    String nombre= "Llamadom" + i;
+    animacion(i+25, nombre, ".png");
+  }
+   for (int i=0; i<2; i++) {
+    String nombre= "Llamados" + i;
+    animacion(i+27, nombre, ".png");
+  }
+
   for (int i=10; i<13; i++) {
     String nombre= "inicio" + (i-9);
     animacion(i, nombre, ".png");
