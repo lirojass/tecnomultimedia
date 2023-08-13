@@ -1,18 +1,18 @@
 void setDefault() {
   miTexto=0;
   agrado=0;
+  pos1=-500;
+  pos2=500;
 }
-/*
-String final( int valor ) {
- switch(valor) {
- case 0:
- return "FinalMalo";
- break;
- case 1:
- return "FinalBueno";
- break;
- case 2:
- return "FinalVerdadero";
- break;
- }
- } */
+
+String finalfinal ( int valor ) {
+  if (valor==0) {
+    return "Final malo";
+  } else if (valor==1) {
+    return "Final bueno";
+  }else if (valor==2) {
+    return "Final verdadero";
+  }else{
+  return "fallo";
+  }
+}
