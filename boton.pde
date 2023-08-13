@@ -3,7 +3,7 @@ void boton(int xpos, int ypos, int xsize, int ysize, int punto, int valor, Strin
   if (mousePressed==true && mouseX>xpos && mouseX<xpos+xsize && mouseY>ypos && mouseY<ypos+ysize) {
     pantalla= destino;
     agrado+=punto;
-    miTexto+=(valor+agrado);
+    miTexto+=(valor);
   }
   switch(visibilidad) {
   case "cuadrada":
