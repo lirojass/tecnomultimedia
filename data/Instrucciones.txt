@@ -1,0 +1,8 @@
+1.Usa la raqueta del fondo de la pantalla
+para rebotar la pelota y romper los ladrillos.
+2.Mueve la raqueta con las flechas del teclado.
+3.Usa la barra espaciadora para usar otra pelota.
+4.Intenta romper la mayor cantidad de ladrillos
+posible sin que la pelota caiga al fondo
+de la pantalla.
+5.Cuando rompas todos los ladrillos ganaras.
