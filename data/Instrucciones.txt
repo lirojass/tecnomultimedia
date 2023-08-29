@@ -6,3 +6,4 @@ para rebotar la pelota y romper los ladrillos.
 posible sin que la pelota caiga al fondo
 de la pantalla.
 5.Cuando rompas todos los ladrillos ganaras.
+6.Pausa con Esc y reinicia con R.
