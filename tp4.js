@@ -1,5 +1,5 @@
 
-//
+//https://youtu.be/_7X6eL8-Awk
 
 let pantalla= "Menu";
 let pelotaPosX;
@@ -23,8 +23,9 @@ let vidaPerdida=false;
 let vidas=3;
 let tiempoEspera;
 let instrucciones = [];
+let pausa=false
 
-function preload() {
+  function preload() {
   font= loadFont("data/8bitoperator_jve.ttf");
   instrucciones = loadStrings("data/Instrucciones.txt");
 }
@@ -42,7 +43,7 @@ function setup() {
 }
 
 function draw() {
- console.log(key);
+  console.log(key);
   switch(pantalla) {
 
   case "Menu":
@@ -60,7 +61,6 @@ function draw() {
 
   case "Instrucciones":
     background(0);
-    raqueta();
     fill(255);
     textAlign(CENTER, CENTER);
     text("Instrucciones", 400, 50);
@@ -133,6 +133,7 @@ function draw() {
     if (keyIsPressed) {
       if (key=='r') {
         setDefault();
+        pausa=false;
       }
     }
     if (Ganar()) {
@@ -141,7 +142,19 @@ function draw() {
     if (vidas==-1) {
       pantalla="Fin del Juego";
     }
-
+    if (pausa) {
+      push();
+      fill(0, 10);
+      rect(0, 0, width, height);
+      fill(255);
+      textSize(48);
+      textAlign(CENTER, CENTER);
+      text("PAUSA", width/2, 200);
+      botonGenericoGrafico(320, 300, 160, 50, 35, "Resumir");
+      botonGenericoGrafico(320, 370, 160, 50, 35, "Reiniciar");
+      botonGenericoGrafico(320, 440, 160, 50, 35, "Menu");
+      pop();
+    }
     break;
 
   case "Fin del Juego":
@@ -162,10 +175,18 @@ function draw() {
     }
     fill(255);
     textSize(35);
-    text("Puntaje:"+puntaje,width/2,300);
+    text("Puntaje:"+puntaje, width/2, 300);
     botonGenericoGrafico(100, 400, 150, 75, 35, "Menu");
     botonGenericoGrafico(550, 400, 150, 75, 35, "Reiniciar");
     break;
+  }
+}
+
+function keyPressed() {
+  if (pantalla=="Juego") {
+    if (keyCode==ESCAPE) {
+      pausa=!pausa;
+    }
   }
 }
 
@@ -197,8 +218,22 @@ function mousePressed() {
       pantalla="Menu";
     }
     break;
-    
-    case "Fin del Juego":
+  case "Juego":
+    if (pausa) {
+      if (botonGenericoDeteccion(350, 300, 100, 50)) {
+        pausa=!pausa;
+      }
+      if (botonGenericoDeteccion(280, 370, 240, 50)) {
+        setDefault();
+        pausa=!pausa;
+      }
+      if (botonGenericoDeteccion(330, 440, 140, 50)) {
+        pantalla="Menu";
+        pausa=!pausa;
+      }
+    }
+    break;
+  case "Fin del Juego":
     if (botonGenericoDeteccion(550, 400, 150, 75)) {
       pantalla="Juego";
       setDefault();
