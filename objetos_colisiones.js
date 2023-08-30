@@ -1,8 +1,10 @@
 
 function pelota() {
   circle(pelotaPosX, pelotaPosY, pelotaTamaño);
-  pelotaPosX+=(pelotaVelX*multiplicador);
-  pelotaPosY+=(pelotaVelY*multiplicador);
+  if (!pausa) {
+    pelotaPosX+=(pelotaVelX*multiplicador);
+    pelotaPosY+=(pelotaVelY*multiplicador);
+  }
   if (colisionX(raquetaPosX, raquetaPosY, raquetaTamaño) && pelotaVelY>0) {
     pelotaVelX=(velocidadRaqueta( raquetaPosX, raquetaPosY, raquetaTamaño))*-1;
     pelotaVelY*=-1;
@@ -34,15 +36,17 @@ function pelota() {
 
 function raqueta() {
   rect(raquetaPosX, raquetaPosY, raquetaTamaño, 20);
-  if (keyIsPressed) {
-    if (raquetaPosX>0) {
-      if (keyIsDown(LEFT_ARROW)) {
-        raquetaPosX-=6;
+  if (!pausa) {
+    if (keyIsPressed) {
+      if (raquetaPosX>0) {
+        if (keyIsDown(LEFT_ARROW)) {
+          raquetaPosX-=6;
+        }
       }
-    }
-    if (raquetaPosX+raquetaTamaño<width) {
-      if (keyIsDown(RIGHT_ARROW)) {
-        raquetaPosX+=6;
+      if (raquetaPosX+raquetaTamaño<width) {
+        if (keyIsDown(RIGHT_ARROW)) {
+          raquetaPosX+=6;
+        }
       }
     }
   }
