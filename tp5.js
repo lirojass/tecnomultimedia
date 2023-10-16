@@ -12,7 +12,6 @@ let GatoConBotas
 function draw() {
   GatoConBotas.dibujar();
   GatoConBotas.actualizar();
-  console.log(frameRate());
 }
 
 function keyPressed() {
