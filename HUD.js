@@ -32,10 +32,8 @@ class HUD {
   noStroke();
   textAlign(LEFT,CENTER);
   textSize(24);
-  fill(0,200,0);
-  rect(550,25,50,50);
-  fill(247,119,20);
-  rect(675,25,50,50);
+  image(imagenes[1][5],550,25,50,50);
+  image(imagenes[1][3],675,25,50,50);
   fill(255);
   text(trigo,620,50);
   text(zanahorias,745,50);
