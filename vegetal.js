@@ -15,12 +15,10 @@ class vegetal {
     noStroke();
     switch(this.tipo) {
     case "trigo":
-      fill(0, 200, 0);
-      rect(this.x, this.y, this.ancho, this.altura);
+      image(imagenes[1][4],this.x, this.y, this.ancho, this.altura);
       break;
     case "zanahoria":
-      fill(247,119,20);
-      rect(this.x, this.y, this.ancho, this.altura);
+      image(imagenes[1][2],this.x, this.y, this.ancho, this.altura);
       break;
     }
     pop()
