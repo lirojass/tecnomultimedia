@@ -5,6 +5,8 @@ class juego {
     this.tiempo=60;
     this.gato= new personaje();
     this.hud= new HUD(this.gato.vidas, 0);
+    this.fondo = new fondo(0);
+    this.fondo1 = new fondo(-800);
     this.piedras = [];
     this.verduras= [];
     for (let i=0; i<10; i++) {
@@ -21,7 +23,8 @@ class juego {
   }
 
   dibujar() {
-    background(100);
+    this.fondo.dibujar();
+    this.fondo1.dibujar();
     for (let i=0; i<this.piedras.length; i++) {
       this.piedras[i].dibujar();
     }
@@ -33,6 +36,8 @@ class juego {
   }
 
   actualizar() {
+    this.fondo.actualizar(this.velocidad);
+    this.fondo1.actualizar(this.velocidad);
     this.gato.actualizarMovimiento();
     this.hud.actualizar(this.gato.vidas);
     if (this.tiempo>0) {
