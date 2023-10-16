@@ -5,14 +5,11 @@ class piedra {
     this.y = y;
     this.ancho=60;
     this.altura=60;
+    this.imagen= round(random(1));
   }
 
   dibujar() {
-    push();
-    noStroke();
-    fill(120);
-    rect(this.x, this.y, this.ancho, this.altura);
-    pop();
+    image(imagenes[1][this.imagen],this.x, this.y, this.ancho, this.altura);
   }
 
   actualizar(valor) {
