@@ -1,7 +1,7 @@
 class personaje {
 
   constructor() {
-    this.x=width/2+30;
+    this.x=width/2-30;
     this.y=height-150;
     this.ancho=60;
     this.altura=120;
@@ -13,6 +13,7 @@ class personaje {
     this.timing=false;
     this.cooldown=0;
     this.timer=0;
+    this.frames=0;
   }
 
   dibujar() {
@@ -29,13 +30,13 @@ class personaje {
       if (this.timing) {
         this.colorDebug= color(200);
       } else {
-        this.colorDebug= color(200, 0, 0);
+        this.colorDebug= color(255);
       }
     } else {
-      this.colorDebug= color(200, 0, 0);
+      this.colorDebug= color(255);
     }
-    fill(this.colorDebug);
-    rect(this.x, this.y, this.ancho, this.altura);
+    tint(this.colorDebug);
+    image(imagenes[0][this.frames],this.x, this.y, this.ancho, this.altura);
     pop();
   }
 
@@ -47,6 +48,12 @@ class personaje {
     }
     if (this.x+this.ancho>width) {
       this.x=width-this.ancho;
+    }
+    if(frameCount%10==0){
+    this.frames++;
+    }
+    if (this.frames>3) {
+      this.frames=0;
     }
   }
 
