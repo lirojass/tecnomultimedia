@@ -1,11 +1,15 @@
-let GatoConBotas
-
+let GatoConBotas;
+//let fuente
 //esto es una version sin los graficos finales o los finales en si
 
-  function setup() {
+
+function setup() {
   let canvas = createCanvas(800, 800);
   canvas.position(windowWidth/2-width/2, windowHeight/2-height/2);
-  GatoConBotas= new TP5();
+
+  //textFont(fuente);
+  //textSize(48)
+  GatoConBotas = new TP5();
 }
 
 
@@ -20,4 +24,8 @@ function keyPressed() {
 
 function keyReleased() {
   GatoConBotas.tecladoLibre();
+}
+
+function mousePressed() {
+  GatoConBotas.mouseApretado()
 }
