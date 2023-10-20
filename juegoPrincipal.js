@@ -57,35 +57,23 @@ class juego {
         break;
       }
     }
-    for (let i=0; i<this.piedras.length; i++) {
-      for (let j=0; j<this.piedras.length; j++) {
-        if (this.piedras[i]!=this.piedras[j]) {
-          if (colisionGenerica(this.piedras[i], this.piedras[j])) {
-            this.piedras[i].x=random(0, 740);
-          }
-        }
-      }
-    }
-    for (let i=0; i<this.piedras.length; i++) {
-      for (let j=0; j<this.verduras.length; j++) {
-        if (this.piedras[i]!=this.verduras[j]) {
-          if (colisionGenerica(this.piedras[i], this.verduras[j])) {
-            this.piedras[i].x=random(0, 740);
-          }
-        }
-      }
-    }
-    for (let i=0; i<this.verduras.length; i++) {
-      for (let j=0; j<this.verduras.length; j++) {
-        if (this.verduras[i]!=this.verduras[j]) {
-          if (colisionGenerica(this.verduras[i], this.verduras[j])) {
-            this.verduras[i].x=random(0, 740);
-          }
-        }
-      }
-    }
+    this.detectarIntervencion(this.piedras,this.piedras);
+    this.detectarIntervencion(this.piedras,this.verduras);
+    this.detectarIntervencion(this.verduras,this.verduras);
   }
 
+
+ detectarIntervencion(obj1,obj2){
+ for (let i=0; i<obj1.length; i++) {
+      for (let j=0; j<obj2.length; j++) {
+        if (obj1[i]!=obj2[j]) {
+          if (colisionGenerica(obj1[i],obj2[j])) {
+            obj1[i].x=random(0, 740);
+          }
+        }
+      }
+ }
+ }
 
   DevolverPuntajeTrigo() {
     for (let i=0; i<this.verduras.length/2; i++) {
@@ -136,6 +124,29 @@ class juego {
     }
     return resultado;
   }
+  
+  reiniciar(){
+  this.tiempo=60;
+  this.gato.vidas=3
+  this.gato.x=width/2-30;
+  this.fondo.y = 0;
+    this.fondo1.y = -800;
+    for (let i=0; i<10; i++) {
+      this.piedras[i].x=round(random(0, 10))*74;
+      this.piedras[i].y=-100-random(100)-i*500;
+    }
+    for (let i=0; i<5; i++) {
+      this.verduras[i].x=round(random(0, 10))*74;
+      this.verduras[i].y=-100-random(100)-i*500;
+    }
+    for (let i=0; i<5; i++) {
+      this.verduras[i].x=round(random(0, 10))*74;
+      this.verduras[i].y=-100-random(100)-i*500;
+    }
+    this.puntajeT=0;
+    this.puntajeZ=0;
+  }
+  
 }
 
 function colisionGenerica(obj1, obj2) {
