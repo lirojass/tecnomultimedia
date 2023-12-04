@@ -8,7 +8,7 @@ class piedra {
     this.imagen= round(random(1));
   }
 
-  dibujar() {
+  dibujar(sprite) {
     image(sprite[1][this.imagen],this.x, this.y, this.ancho, this.altura);
   }
 
