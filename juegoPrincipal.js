@@ -1,6 +1,7 @@
 class juego {
 
-  constructor() {
+  constructor(sprite) {
+    this.sprite=sprite
     this.velocidad=5;
     this.tiempo=60;
     this.gato= new personaje();
@@ -23,16 +24,16 @@ class juego {
   }
 
   dibujar() {
-    this.fondo.dibujar();
-    this.fondo1.dibujar();
+    this.fondo.dibujar(this.sprite);
+    this.fondo1.dibujar(this.sprite);
     for (let i=0; i<this.piedras.length; i++) {
-      this.piedras[i].dibujar();
+      this.piedras[i].dibujar(this.sprite);
     }
     for (let i=0; i<this.verduras.length; i++) {
-      this.verduras[i].dibujar();
+      this.verduras[i].dibujar(this.sprite);
     }
-    this.gato.dibujar();
-    this.hud.dibujar(this.DevolverPuntajeTrigo(), this.DevolverPuntajeZanahoria(), this.tiempo);
+    this.gato.dibujar(this.sprite);
+    this.hud.dibujar(this.sprite,this.DevolverPuntajeTrigo(), this.DevolverPuntajeZanahoria(), this.tiempo);
   }
 
   actualizar() {
