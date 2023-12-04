@@ -16,7 +16,7 @@ class personaje {
     this.frames=0;
   }
 
-  dibujar() {
+  dibujar(sprite) {
     push();
     noStroke();
     if (this.timer-this.invincibilidad>this.cooldown) {
