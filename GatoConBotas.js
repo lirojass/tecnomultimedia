@@ -2,7 +2,7 @@ class GatoConBotas {
 
     constructor() {
         this.pantalla = 0;
-        this.juego = new juego();
+        this.juego = new juego(sprite);
         this.botas = new imagenMoviente(-500, 10);
         this.sombrero = new imagenMoviente(500, 10);
         this.botonInicio = new boton(50, 600, "Iniciar");
@@ -19,7 +19,7 @@ class GatoConBotas {
         this.esteTexto = 0;
     }
 
-    dibujar() {
+    dibujar(imagen,script) {
         switch (this.pantalla) {
             case 0:
                 push();
@@ -61,7 +61,6 @@ class GatoConBotas {
                 if (this.esteTexto > 7) {
                     this.botonSiguiente.dibujar();
                 }
-                console.log("i live");
                 break;
             case 4:
                 this.botas.dibujar(imagen[10][this.frame]);
@@ -490,4 +489,3 @@ class GatoConBotas {
         }
     }
 }
-
