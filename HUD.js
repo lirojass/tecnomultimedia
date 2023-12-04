@@ -13,7 +13,7 @@ class HUD {
     this.frames=0;
   }
 
-  dibujar(trigo, zanahorias, tiempo) {
+  dibujar(sprite,trigo, zanahorias, tiempo) {
     for (let i=0; i<this.cantidadVidas; i++) {
       image(sprite[2][this.frames],this.xVidas+this.anchoVidas*i+25*i, this.yVidas, this.anchoVidas, this.alturaVidas);
     }
@@ -21,10 +21,10 @@ class HUD {
     textAlign(CENTER, CENTER);
     textSize(48);
     text(tiempo, width/2, 50);
-    this.puntaje(trigo, zanahorias)
+    this.puntaje(sprite,trigo, zanahorias)
   }
 
-  puntaje(trigo, zanahorias) {
+  puntaje(sprite,trigo, zanahorias) {
     push();
     noStroke();
     textAlign(LEFT, CENTER);
