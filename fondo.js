@@ -5,7 +5,7 @@ class fondo {
     this.y=y;
   }
 
-  dibujar() {
+  dibujar(sprite) {
     image(sprite[1][6], this.x, this.y, width, height);
   }
 
