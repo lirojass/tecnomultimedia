@@ -1,15 +1,15 @@
 let tp6;
 
 function setup() {
-  let canvas = createCanvas(800, 800);
-  canvas.position(windowWidth/2-width/2, windowHeight/2-height/2);
+  createCanvas(800, 800);
+  //let canvas = createCanvas(800, 800);
+  //canvas.position(windowWidth/2-width/2, windowHeight/2-height/2);
   textFont("Merriweather");
   tp6= new GatoConBotas();
 }
 
-
 function draw() {
-tp6.dibujar();
+tp6.dibujar(imagen,script);
 tp6.actualizar();
 }
 
