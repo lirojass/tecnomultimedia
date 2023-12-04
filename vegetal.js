@@ -10,7 +10,7 @@ class vegetal {
     this.cantidadZ=false;
   }
 
-  dibujar() {
+  dibujar(sprite) {
     push();
     noStroke();
     switch(this.tipo) {
