@@ -1,0 +1,97 @@
+
+.container{
+background-color: inherit;
+padding-top: 40px;
+max-width: 100%;
+}
+
+iframe{
+    container: flex;
+    border: 15px goldenrod ridge;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+body{
+    font-family: Merriweather;
+    background-color: rgb(242, 255, 165);
+}
+
+h1{
+    text-align: center;
+    font-size: 80px;
+}
+
+h2{
+    text-align: center;
+}
+
+header{
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    width: 100%;
+    background-color: #fffb00;
+}
+
+nav{
+    color: orange;
+}
+
+.imagenArreglo{
+    max-width: 90%;
+}
+
+article{
+    margin-left: 40px;
+    font-size: 20px;
+    text-align: start;
+    background-color:inherit;
+}
+
+article h2{
+    margin-bottom: 20px;
+}
+
+.centeredArticle{
+max-width: 60%;
+margin-top: 30px;
+}
+
+
+
+footer{
+    padding-top: 100px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.NoGame{
+    display: none;
+}
+
+
+@media only screen and (max-width: 600px){
+    
+    article{
+        max-width: 80%;
+    }
+    iframe{
+        display: none;
+    }
+
+    .imagenArreglo{
+        padding-bottom: 10px;
+    }
+
+    .NoGame{
+        padding-top: 20px;
+        display:block;
+    }
+    
+    .centeredArticle{
+        max-width: 80%;
+        
+        }
+}
